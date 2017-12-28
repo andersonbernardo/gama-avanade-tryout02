@@ -1,0 +1,53 @@
+<div class="calendar">
+  <div class="left">
+      <h1 class="current-day">{{selectedDate.date()}} <span class="current-day-2">{{selectedDate.format('dddd').toUpperCase()}}</span></h1>   
+      
+
+      <div class="box-events">
+          <div class="current-events">
+              <h3>Current Events</h3>
+              <ul class="appointments__list">
+                  <li *ngFor="let item of dayEvents">{{item.title}}</li>
+              </ul>
+          </div>
+          <div class="createEvents">
+              <input type="text" #event name="" id="appointment-input" placeholder="Create on Event">
+              <button (click)="addEvent(event)" id="appointment-submit"><i class="fa fa-plus-square-o" aria-hidden="true"></i></button>  
+          </div>
+      </div>
+  </div>
+  <div class="right">       
+      <div class="monthYear">
+         <i (click)="beforeMonth()" class="fa fa-chevron-left"  style="cursor: pointer;" aria-hidden="true"></i>
+                 {{startDay.format("MMMM")}}/{{startDay.format("YY")}}
+         <i (click)="nextMonth()" class="fa fa-chevron-right" style="cursor: pointer;" aria-hidden="true"></i>
+      </div> 
+      <table class="dates">
+          <thead>
+              <tr>
+                  <td>SUN</td>
+                  <td>MON</td>
+                  <td>TUE</td>
+                  <td>WED</td>
+                  <td>THU</td>
+                  <td>FRI</td>
+                  <td>SAT</td>
+              </tr>
+          </thead>
+          <tbody > 
+              <tr *ngFor="let week of calendar">
+                  <td *ngFor="let day of week">                        
+                      <div (click)="changeDate($event.target.getAttribute('date'))" 
+                          style="cursor: pointer;" 
+                          [attr.date]="day.dayMoment.format('YYYY-MM-DD')" 
+                          [class.selectedDate]="day.dateString == selectedDate.format('YYYY-MM-DD')"
+                          [class.noCurrentMonth]="day.dayMoment.format('M') != currentMonth"
+                          [class.has-event]="day.hasEvent && (day.dateString !== selectedDate.format('YYYY-MM-DD'))"
+                          class="circle calendar__day">{{day.dayMoment.date()}}</div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+

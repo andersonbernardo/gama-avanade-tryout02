@@ -2,8 +2,9 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import * as moment from 'moment';
 
+
 export class AppointmentsSeed implements InMemoryDbService {
-  createDb(){
+  createDb() {
     const appointments = [
       { id: 1, date: '2017-12-14', title: 'Gama Academy' },
       { id: 2, date: '2017-12-25', title: 'Christmas'    },
@@ -14,4 +15,6 @@ export class AppointmentsSeed implements InMemoryDbService {
     ];
     return {appointments};
   }
+
+
 }

@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+.calendar {
+    max-width: 600px;
+    margin: 125px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    background: #ffffff;
+}
+
+.left{
+    width: 244px;
+    height: 350px;
+    background: rgba(148,0,119, 1);
+    color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.right{
+    width: 356px;
+    height: 350px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.current-day{
+    font-weight: bold;
+    font-size:100px;
+    text-align: center;
+    letter-spacing: -2.2px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;    
+    line-height: 1em;
+    
+}
+.current-day-2{    
+    display: block;
+    font-weight: bold;
+    font-size:18px;
+    text-align: center;
+    letter-spacing: -0.4px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1em;
+}
+
+.noCurrentMonth {
+    color:#e5e5e5;
+}
+
+#add-appointment{
+    display: flex;
+}
+#appointment-input{
+    width: 150px;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    background: transparent;
+    border: 0px;
+    color: #fff;
+    padding: 6px 0 4px 0px;
+    border-bottom: 2px solid #fff;
+}
+#appointment-input::-webkit-input-placeholder {
+    color: #fff;
+}    
+
+#appointment-submit{
+    background: transparent;
+    border: 0;
+    font-size: 29px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 0 0 0px;
+    line-height: 0em;
+    margin-left: auto;    
+}
+
+.current-events h3{
+    font-size: 12px;
+    letter-spacing: -0.1px;
+}
+
+.monthYear{
+    float: right;
+    font-weight: bold;
+    font-size:12px;
+    text-align: center;
+    letter-spacing: -0.3px;
+    line-height: 1em;
+    color: #e5e5e5;
+}
+.month-year:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.dates {
+    clear: both;
+    width: 100%;
+    border-top:1px solid #999999;
+    margin-top: 24px;
+}
+.dates thead {
+    border-bottom: 0px;
+}
+.dates thead td{
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: -0.3px;
+    padding: 18px 0px 9px 0px;
+    font-family: 'Roboto', sans-serif;        
+}    
+.dates td{
+    text-align: center;    
+    padding: 8px 15px;
+}
+
+.selectedDate {
+    background: #890a78;
+    color: white;    
+    height: 20px;
+    width: 20px;
+}
+
+.has-event::before {
+    content: "";
+    display: block;
+    background: #890a78;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    position: relative;       
+    
+}
+
+.calendar__day {    
+    font-size:12px;
+    text-align: center;       
+    font-family: 'Roboto', sans-serif;        
+    letter-spacing: -0.3px;
+}
+
+@media (max-width: 600px ){
+    .calendar{
+        max-width: 346px;
+        margin: 20px auto;
+        flex-direction: column;
+    }
+    
+    .left{
+        width: 100%;
+        display: flex;
+        height: 180px;
+        padding-right: 20px;
+    }        
+    .right{
+        width: 100%;
+        height: 384px;
+    }
+
+    .box-events{
+        width: 174px;
+        margin: 0 0 0 5px;
+        flex-grow: 1;
+        margin-left: 10px;
+    }
+    .current-events{
+        min-height: 59px;
+    }
+}
+
+    

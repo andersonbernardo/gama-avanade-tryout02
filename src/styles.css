@@ -6,4 +6,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background:#e5e5e5;
 }
+body::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+}
+
+
+@import "../node_modules/materialize-css/dist/css/materialize.css";
